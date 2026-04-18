@@ -450,6 +450,90 @@
 				"description": "Generated from cURL: curl 'https://www.youtube.com/youtubei/v1/account/get_setting_values?prettyPrint=false' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7,zh-TW;q=0.6' \\\r\n  -H 'authorization: SAPISIDHASH 1776497298_fb0b24a08d4d0cc954a2581169fd5b376863ac05_u SAPISID1PHASH 1776497298_fb0b24a08d4d0cc954a2581169fd5b376863ac05_u SAPISID3PHASH 1776497298_fb0b24a08d4d0cc954a2581169fd5b376863ac05_u' \\\r\n  -H 'content-type: application/json' \\\r\n  -b 'VISITOR_INFO1_LIVE=IJWu_M8MwjU; VISITOR_PRIVACY_METADATA=CgJNWRIEGgAgWQ%3D%3D; LOGIN_INFO=AFmmF2swRQIgd520CA7ObAxF64qyFCL96-Kx1mLBfjIMX44cYm3XOgYCIQCn5KJiAwcETJPkaRfjk36yuaBHo4kdJ5eygppEWd1Eqg:QUQ3MjNmeWhGM2IySFhZTjE4S3hFR1dBeTFpeXdycmp2dUNVNnNUeXFRWURuNkFBZGdqVjJPNjFkcVk3ZWJhUG9zNXZpQUtoZlcxdGlwZVl2S0twYzhPOEhpOXRqYVdLX3dFbkNkamRRMWVaVHViRkJ1TDJpdVUwUW5sLVBsM3RSZ1h6MWtjNTEzbjVzc0NjdmQ2U216eXk5SkI3UHZ0cU93; HSID=AyCgIEoi0eD-UQx9n; SSID=ACwjceZqXcUlrGxV8; APISID=ZQu34nXnIT7DdpYy/ALNLGGfMLVU8rwAFS; SAPISID=9Ypto6uorfAiGXJ-/ApBlHcK_7rkSqhC7S; __Secure-1PAPISID=9Ypto6uorfAiGXJ-/ApBlHcK_7rkSqhC7S; __Secure-3PAPISID=9Ypto6uorfAiGXJ-/ApBlHcK_7rkSqhC7S; SID=g.a0008Qhi31GGnv5tKSGi6TKCfemvnunXwROCMPUZSoInUUMO4F8bBLaEcEAq_YDXRYyAqj6VdAACgYKATwSARISFQHGX2Mi994F8tZ-jTMeHu5gBwiMCRoVAUF8yKot7E0Ir0vlZ3VP5dqfuEpW0076; __Secure-1PSID=g.a0008Qhi31GGnv5tKSGi6TKCfemvnunXwROCMPUZSoInUUMO4F8bCSaJPOZwKDgqgeFwxLsTvQACgYKAfgSARISFQHGX2MiPMD1m5z4_MGrQxnMivJOBRoVAUF8yKqC9Jg2RqC54ivdMrfHJ5w90076; __Secure-3PSID=g.a0008Qhi31GGnv5tKSGi6TKCfemvnunXwROCMPUZSoInUUMO4F8bmttKml-NKtylqRtH9BJLSgACgYKAawSARISFQHGX2Mi_9HLa9-Ap15VqmUyjvubAhoVAUF8yKpfl19_05GisIanFvs4OY2G0076; __Secure-BUCKET=CIcF; PREF=tz=Asia.Kuala_Lumpur&f7=100&f5=20000; __Secure-ROLLOUT_TOKEN=CP3ys7jZ2piz6gEQ-puWk7a3kQMY7uyr1f_0kwM%3D; YSC=Jq46S-NweJQ; __Secure-1PSIDTS=sidts-CjUBWhotCSyJnxO3RgN2I37zAZWgB1NvfIPpRb4DfTZBRdYsXVBtdd_lt2r_wSIliYXGTQsGMxAA; __Secure-3PSIDTS=sidts-CjUBWhotCSyJnxO3RgN2I37zAZWgB1NvfIPpRb4DfTZBRdYsXVBtdd_lt2r_wSIliYXGTQsGMxAA; ST-1mxkj7o=itct=CKADENwwIhMIooeAqev2kwMVS1adCR2SzSgjMgpnLWhpZ2gtcmVjWg9GRXdoYXRfdG9fd2F0Y2iaAQYQjh4YngHKAQTXSKJT&csn=jI3dA1wez3AkMj76&session_logininfo=AFmmF2swRQIgd520CA7ObAxF64qyFCL96-Kx1mLBfjIMX44cYm3XOgYCIQCn5KJiAwcETJPkaRfjk36yuaBHo4kdJ5eygppEWd1Eqg%3AQUQ3MjNmeWhGM2IySFhZTjE4S3hFR1dBeTFpeXdycmp2dUNVNnNUeXFRWURuNkFBZGdqVjJPNjFkcVk3ZWJhUG9zNXZpQUtoZlcxdGlwZVl2S0twYzhPOEhpOXRqYVdLX3dFbkNkamRRMWVaVHViRkJ1TDJpdVUwUW5sLVBsM3RSZ1h6MWtjNTEzbjVzc0NjdmQ2U216eXk5SkI3UHZ0cU93&endpoint=%7B%22clickTrackingParams%22%3A%22CKADENwwIhMIooeAqev2kwMVS1adCR2SzSgjMgpnLWhpZ2gtcmVjWg9GRXdoYXRfdG9fd2F0Y2iaAQYQjh4YngHKAQTXSKJT%22%2C%22commandMetadata%22%3A%7B%22webCommandMetadata%22%3A%7B%22url%22%3A%22%2Fwatch%3Fv%3D5wx-D7K5r9E%22%2C%22webPageType%22%3A%22WEB_PAGE_TYPE_WATCH%22%2C%22rootVe%22%3A3832%7D%7D%2C%22watchEndpoint%22%3A%7B%22videoId%22%3A%225wx-D7K5r9E%22%2C%22watchEndpointSupportedOnesieConfig%22%3A%7B%22html5PlaybackOnesieConfig%22%3A%7B%22commonConfig%22%3A%7B%22url%22%3A%22https%3A%2F%2Frr1---sn-h5mpn-30ak.googlevideo.com%2Finitplayback%3Fsource%3Dyoutube%26oeis%3D1%26c%3DWEB%26oad%3D3200%26ovd%3D3200%26oaad%3D11000%26oavd%3D11000%26ocs%3D700%26oewis%3D1%26oputc%3D1%26ofpcc%3D1%26siu%3D1%26msp%3D1%26odepv%3D1%26id%3De70c7e0fb2b9afd1%26ip%3D2001%253Ad08%253Ad2%253A2205%253A8453%253A925e%253Af7b3%253A6a0%26initcwndbps%3D897500%26mt%3D1776495420%26oweuc%3D%26pxtags%3DCg4KAnR4Egg1MTc3MzMxOA%26rxtags%3DCg4KAnR4Egg1MTc3MzMxNw%252CCg4KAnR4Egg1MTc3MzMxOA%22%7D%7D%7D%2C%22startTimeSeconds%22%3A0%7D%7D; CONSISTENCY=AH5K9rYd15hyeLbEVTlOvAGu28Zg4V5i2D2i08xUKjIM4VLPtsBdiYU44kYiGPNdafOcgvk6ZBU7b5MrJAnUvipY; SIDCC=AKEyXzWBJ98MK5PCHfZkXHepoxcKPIwkbRm5wDLbIw0Tii2fj9zLlVtgwJH67r9oYuVpsuN7YE4; __Secure-1PSIDCC=AKEyXzWlU68ZpJAFgnLWS3gxtWgf4OtdLFHE8EwWeThCqimuEZpiBsGamgo5wF1YMXKh75nYsw; __Secure-3PSIDCC=AKEyXzUkHa3KMVHx0Rxc_wfZFErdulVezTjFjGyrRMxSUYNvZaVba53bBFpx6zsmZY3E7XO7pQ' \\\r\n  -H 'device-memory: 32' \\\r\n  -H 'origin: https://www.youtube.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://www.youtube.com/watch?v=5wx-D7K5r9E' \\\r\n  -H 'sec-ch-dpr: 1' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"' \\\r\n  -H 'sec-ch-ua-arch: \"x86\"' \\\r\n  -H 'sec-ch-ua-bitness: \"64\"' \\\r\n  -H 'sec-ch-ua-form-factors: \"Desktop\"' \\\r\n  -H 'sec-ch-ua-full-version: \"147.0.7727.57\"' \\\r\n  -H 'sec-ch-ua-full-version-list: \"Google Chrome\";v=\"147.0.7727.57\", \"Not.A/Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"147.0.7727.57\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-model: \"\"' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-ch-ua-platform-version: \"19.0.0\"' \\\r\n  -H 'sec-ch-ua-wow64: ?0' \\\r\n  -H 'sec-ch-viewport-width: 1811' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \\\r\n  -H 'x-browser-channel: stable' \\\r\n  -H 'x-browser-copyright: Copyright 2026 Google LLC. All Rights reserved.' \\\r\n  -H 'x-browser-validation: qUZpMpzMOTqUcuBL4jLlfrKpms4=' \\\r\n  -H 'x-browser-year: 2026' \\\r\n  -H 'x-client-data: CKmdygEIkqHLAQiFoM0BCPq4zwEIm77PAQiOv88BCI/BzwEYv6nKARj1vc8B' \\\r\n  -H 'x-goog-authuser: 0' \\\r\n  -H 'x-goog-visitor-id: CgtJSld1X004TXdqVSiQ5YzPBjIKCgJNWRIEGgAgWQ%3D%3D' \\\r\n  -H 'x-origin: https://www.youtube.com' \\\r\n  -H 'x-youtube-bootstrap-logged-in: true' \\\r\n  -H 'x-youtube-client-name: 1' \\\r\n  -H 'x-youtube-client-version: 2.20260416.01.00' \\\r\n  --data-raw '{\"context\":{\"client\":{\"hl\":\"en\",\"gl\":\"MY\",\"remoteHost\":\"2001:d08:d2:2205:8453:925e:f7b3:6a0\",\"deviceMake\":\"\",\"deviceModel\":\"\",\"visitorData\":\"CgtJSld1X004TXdqVSiQ5YzPBjIKCgJNWRIEGgAgWQ%3D%3D\",\"userAgent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36,gzip(gfe)\",\"clientName\":\"WEB\",\"clientVersion\":\"2.20260416.01.00\",\"osName\":\"Windows\",\"osVersion\":\"10.0\",\"originalUrl\":\"https://www.youtube.com/watch?v=5wx-D7K5r9E\",\"platform\":\"DESKTOP\",\"clientFormFactor\":\"UNKNOWN_FORM_FACTOR\",\"windowWidthPoints\":1811,\"configInfo\":{\"appInstallData\":\"CJDljM8GEMj3zxwQrtbPHBDAlNEcELTB0BwQ_LLOHBCykdEcEMOR0BwQzPnQHBDxtNAcEMPegBMQ3rzOHBC0pdEcEImwzhwQ167QHBD2q7AFEIHNzhwQkYz_EhCh-NAcENeL0RwQ0r3QHBCsrNAcEKaasAUQgo_PHBDN0bEFEPHMzxwQr_7QHBC9tq4FELOj0RwQwonRHBD-jdEcEJS20BwQ_v_QHBCJ6K4FEJ_PgBMQprbQHBCX1YATEIeszhwQ-9uAExC34K4FELjkzhwQ0qTRHBD0itEcEODNsQUQy9GxBRCzkM8cELyk0BwQ8ZnRHBDj0qgXEJv60BwQndCwBRDi1K4FEMbGzxwQzN-uBRCL988cEMGP0BwQpojRHBCZjbEFEL2ZsAUQlP6wBRCbwtAcEPHE0BwQlofRHBC3hs8cENr3zhwQ4IKAExC9irAFEPv20BwQlIPQHBCs9dAcEOOT0RwQjYfRHBDw3IATEMnfgBMqdENBTVNVUlZLLVpxLURNZVVFcFVDbkE3NUZiMEdXTjREbDZqbUNfQ3hFb2RNTXFDc0JBUE5fd1hMdHdiN0pwQktucEVHaFJTZmJiSFNCdU1Xd0ZIcEU1NUxnaWlPeEFMcS1RYlVGSmdBcTBIZW5nVWRCdz09MAA%3D\"},\"screenDensityFloat\":1,\"userInterfaceTheme\":\"USER_INTERFACE_THEME_LIGHT\",\"timeZone\":\"Asia/Kuala_Lumpur\",\"browserName\":\"Chrome\",\"browserVersion\":\"147.0.0.0\",\"memoryTotalKbytes\":\"32000000\",\"acceptHeader\":\"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7\",\"deviceExperimentId\":\"ChxOell5T1RrNU56YzROemMzTWpVNU1qUXpNZz09EJDljM8GGJDljM8G\",\"rolloutToken\":\"CP3ys7jZ2piz6gEQ-puWk7a3kQMY7uyr1f_0kwM%3D\",\"screenWidthPoints\":1811,\"screenHeightPoints\":1271,\"screenPixelDensity\":1,\"utcOffsetMinutes\":480,\"connectionType\":\"CONN_CELLULAR_4G\",\"mainAppWebInfo\":{\"graftUrl\":\"https://www.youtube.com/watch?v=5wx-D7K5r9E\",\"webDisplayMode\":\"WEB_DISPLAY_MODE_BROWSER\",\"isWebNativeShareAvailable\":true}},\"user\":{\"lockedSafetyMode\":false},\"request\":{\"useSsl\":true,\"internalExperimentFlags\":[],\"consistencyTokenJars\":[{\"encryptedTokenJarContents\":\"AH5K9rYd15hyeLbEVTlOvAGu28Zg4V5i2D2i08xUKjIM4VLPtsBdiYU44kYiGPNdafOcgvk6ZBU7b5MrJAnUvipY\"}]},\"adSignalsInfo\":{\"params\":[{\"key\":\"dt\",\"value\":\"1776497298451\"},{\"key\":\"flash\",\"value\":\"0\"},{\"key\":\"frm\",\"value\":\"0\"},{\"key\":\"u_tz\",\"value\":\"480\"},{\"key\":\"u_his\",\"value\":\"10\"},{\"key\":\"u_h\",\"value\":\"1440\"},{\"key\":\"u_w\",\"value\":\"2560\"},{\"key\":\"u_ah\",\"value\":\"1392\"},{\"key\":\"u_aw\",\"value\":\"2560\"},{\"key\":\"u_cd\",\"value\":\"32\"},{\"key\":\"bc\",\"value\":\"31\"},{\"key\":\"bih\",\"value\":\"1271\"},{\"key\":\"biw\",\"value\":\"1811\"},{\"key\":\"brdim\",\"value\":\"0,0,0,0,2560,0,2560,1392,1811,1271\"},{\"key\":\"vis\",\"value\":\"1\"},{\"key\":\"wgl\",\"value\":\"true\"},{\"key\":\"ca_type\",\"value\":\"image\"}]}},\"settingItemIds\":[\"483\"]}'"
 			},
 			"response": []
+		},
+		{
+			"name": "https://slot.m13.kingmidasdev.net/table/api/sessions",
+			"id": "59daf180-cd20-433e-bcc6-886de250e7e9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "game-identifier",
+						"value": "coin-pusher-jurassic"
+					},
+					{
+						"key": "origin",
+						"value": "https://cdn.kingdomhall729.com"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://cdn.kingdomhall729.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-client-id",
+						"value": "null"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"test\":true,\"balance\":10000,\"currency\":\"USD\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://slot.m13.kingmidasdev.net/table/api/sessions",
+				"description": "Generated from cURL: curl 'https://slot.m13.kingmidasdev.net/table/api/sessions' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9' \\\r\n  -H 'content-type: application/json' \\\r\n  -H 'game-identifier: coin-pusher-jurassic' \\\r\n  -H 'origin: https://cdn.kingdomhall729.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://cdn.kingdomhall729.com/' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: cross-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \\\r\n  -H 'x-client-id: null' \\\r\n  --data-raw '{\"test\":true,\"balance\":10000,\"currency\":\"USD\"}'"
+			},
+			"response": []
 		}
 	]
 }
