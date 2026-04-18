@@ -65,7 +65,7 @@
 			"response": []
 		},
 		{
-			"name": "https://www.youtube.com/youtubei/v1/player?prettyPrint=false",
+			"name": "Main",
 			"id": "3c14a4f8-568e-4500-9558-2b298a5200bd",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
