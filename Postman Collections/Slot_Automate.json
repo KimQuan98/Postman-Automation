@@ -242,7 +242,7 @@
 			"response": []
 		},
 		{
-			"name": "https://slot.m13.kingmidasdev.net/table/api/sessions",
+			"name": "M13 Session",
 			"id": "59daf180-cd20-433e-bcc6-886de250e7e9",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -326,7 +326,7 @@
 			"response": []
 		},
 		{
-			"name": "https://slot.m13.kingmidasdev.net/table/api/lobbies",
+			"name": "M13 Lobbies",
 			"id": "8836120b-2f49-456a-a551-0dfbbed255a6",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
