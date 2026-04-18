@@ -66,6 +66,41 @@
 		},
 		{
 			"name": "Main",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "24806013-2035-4c0a-83a3-e0ffdf3f6c6c",
+						"exec": [
+							"// Basic status check\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Check response time (important for game APIs)\r",
+							"pm.test(\"Response time is under 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"\r",
+							"// Verify JSON structure exists\r",
+							"pm.test(\"Response has video details\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"videoDetails\");\r",
+							"});\r",
+							"\r",
+							"// Extract and save data for next request\r",
+							"pm.test(\"Extract video title\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.environment.set(\"videoTitle\", jsonData.videoDetails.title);\r",
+							"    console.log(\"Video title:\", jsonData.videoDetails.title);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
 			"id": "3c14a4f8-568e-4500-9558-2b298a5200bd",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -224,6 +259,11 @@
 					{
 						"key": "Cookie",
 						"value": "VISITOR_INFO1_LIVE=IJWu_M8MwjU; VISITOR_PRIVACY_METADATA=CgJNWRIEGgAgWQ%3D%3D; LOGIN_INFO=AFmmF2swRQIgd520CA7ObAxF64qyFCL96-Kx1mLBfjIMX44cYm3XOgYCIQCn5KJiAwcETJPkaRfjk36yuaBHo4kdJ5eygppEWd1Eqg:QUQ3MjNmeWhGM2IySFhZTjE4S3hFR1dBeTFpeXdycmp2dUNVNnNUeXFRWURuNkFBZGdqVjJPNjFkcVk3ZWJhUG9zNXZpQUtoZlcxdGlwZVl2S0twYzhPOEhpOXRqYVdLX3dFbkNkamRRMWVaVHViRkJ1TDJpdVUwUW5sLVBsM3RSZ1h6MWtjNTEzbjVzc0NjdmQ2U216eXk5SkI3UHZ0cU93; HSID=AyCgIEoi0eD-UQx9n; SSID=ACwjceZqXcUlrGxV8; APISID=ZQu34nXnIT7DdpYy/ALNLGGfMLVU8rwAFS; SAPISID=9Ypto6uorfAiGXJ-/ApBlHcK_7rkSqhC7S; __Secure-1PAPISID=9Ypto6uorfAiGXJ-/ApBlHcK_7rkSqhC7S; __Secure-3PAPISID=9Ypto6uorfAiGXJ-/ApBlHcK_7rkSqhC7S; SID=g.a0008Qhi31GGnv5tKSGi6TKCfemvnunXwROCMPUZSoInUUMO4F8bBLaEcEAq_YDXRYyAqj6VdAACgYKATwSARISFQHGX2Mi994F8tZ-jTMeHu5gBwiMCRoVAUF8yKot7E0Ir0vlZ3VP5dqfuEpW0076; __Secure-1PSID=g.a0008Qhi31GGnv5tKSGi6TKCfemvnunXwROCMPUZSoInUUMO4F8bCSaJPOZwKDgqgeFwxLsTvQACgYKAfgSARISFQHGX2MiPMD1m5z4_MGrQxnMivJOBRoVAUF8yKqC9Jg2RqC54ivdMrfHJ5w90076; __Secure-3PSID=g.a0008Qhi31GGnv5tKSGi6TKCfemvnunXwROCMPUZSoInUUMO4F8bmttKml-NKtylqRtH9BJLSgACgYKAawSARISFQHGX2Mi_9HLa9-Ap15VqmUyjvubAhoVAUF8yKpfl19_05GisIanFvs4OY2G0076; __Secure-BUCKET=CIcF; PREF=tz=Asia.Kuala_Lumpur&f7=100&f5=20000; __Secure-ROLLOUT_TOKEN=CP3ys7jZ2piz6gEQ-puWk7a3kQMY7uyr1f_0kwM%3D; YSC=Jq46S-NweJQ; __Secure-1PSIDTS=sidts-CjUBWhotCUTNRkU1ukbiPEV8OeEWpq_ztYXl5koRdX0KPTY9YiAN79HsWCyB89Imos0F_zMFQRAA; __Secure-3PSIDTS=sidts-CjUBWhotCUTNRkU1ukbiPEV8OeEWpq_ztYXl5koRdX0KPTY9YiAN79HsWCyB89Imos0F_zMFQRAA; CONSISTENCY=AH5K9ramVDjNd838Q64i7NG4suaqiJUhUpzChWpA2f4PRNUCrPnS4S93EJARtNYCeWUCflmRvVYzXKiQZsajjkO5cJ6pGnwHrDy8I9gfrzHyuIo2QGtWGf5ngOQ0ZD90R6fbf0HNSFttbHbdKzlHDQUg; SIDCC=AKEyXzV5Vv4T0TCVhGUS9k2HsLSV1ypEr1DET5KzIsR_ZOoPgBWpE_iixJEyStrdLeIbchQw7DA; __Secure-1PSIDCC=AKEyXzU8Kmi9x-xydYhsfgtLAVQbD723BpEerdZoDU277X_BQ8yba0L0stZW2dwZOKRY_c7eDA; __Secure-3PSIDCC=AKEyXzUyKfvgCzBNbs7dhMhKWjX4rpzBGf0IY5o3DVy5OLrs394FUONrwDTiqGx5NbfjaFRHEw; ST-3opvp5=session_logininfo=AFmmF2swRQIgd520CA7ObAxF64qyFCL96-Kx1mLBfjIMX44cYm3XOgYCIQCn5KJiAwcETJPkaRfjk36yuaBHo4kdJ5eygppEWd1Eqg%3AQUQ3MjNmeWhGM2IySFhZTjE4S3hFR1dBeTFpeXdycmp2dUNVNnNUeXFRWURuNkFBZGdqVjJPNjFkcVk3ZWJhUG9zNXZpQUtoZlcxdGlwZVl2S0twYzhPOEhpOXRqYVdLX3dFbkNkamRRMWVaVHViRkJ1TDJpdVUwUW5sLVBsM3RSZ1h6MWtjNTEzbjVzc0NjdmQ2U216eXk5SkI3UHZ0cU93"
+					},
+					{
+						"key": "{{videoId}}",
+						"value": "",
+						"type": "text"
 					}
 				],
 				"body": {
@@ -532,6 +572,81 @@
 				},
 				"url": "https://slot.m13.kingmidasdev.net/table/api/sessions",
 				"description": "Generated from cURL: curl 'https://slot.m13.kingmidasdev.net/table/api/sessions' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9' \\\r\n  -H 'content-type: application/json' \\\r\n  -H 'game-identifier: coin-pusher-jurassic' \\\r\n  -H 'origin: https://cdn.kingdomhall729.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://cdn.kingdomhall729.com/' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: cross-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \\\r\n  -H 'x-client-id: null' \\\r\n  --data-raw '{\"test\":true,\"balance\":10000,\"currency\":\"USD\"}'"
+			},
+			"response": []
+		},
+		{
+			"name": "https://slot.m13.kingmidasdev.net/table/api/lobbies",
+			"id": "8836120b-2f49-456a-a551-0dfbbed255a6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "game-identifier",
+						"value": "coin-pusher-jurassic"
+					},
+					{
+						"key": "origin",
+						"value": "https://cdn.kingdomhall729.com"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://cdn.kingdomhall729.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-authentication-token",
+						"value": "KXENBZQVrO9dZ"
+					},
+					{
+						"key": "x-client-id",
+						"value": "null"
+					}
+				],
+				"url": "https://slot.m13.kingmidasdev.net/table/api/lobbies",
+				"description": "Generated from cURL: curl 'https://slot.m13.kingmidasdev.net/table/api/lobbies' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9' \\\r\n  -H 'game-identifier: coin-pusher-jurassic' \\\r\n  -H 'origin: https://cdn.kingdomhall729.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://cdn.kingdomhall729.com/' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: cross-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \\\r\n  -H 'x-authentication-token: KXENBZQVrO9dZ' \\\r\n  -H 'x-client-id: null'"
 			},
 			"response": []
 		}
