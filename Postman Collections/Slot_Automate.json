@@ -399,6 +399,18 @@
 				"description": "Generated from cURL: curl 'https://slot.m13.kingmidasdev.net/table/api/lobbies' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9' \\\r\n  -H 'game-identifier: coin-pusher-jurassic' \\\r\n  -H 'origin: https://cdn.kingdomhall729.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://cdn.kingdomhall729.com/' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: cross-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \\\r\n  -H 'x-authentication-token: KXENBZQVrO9dZ' \\\r\n  -H 'x-client-id: null'"
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "6b6e2d4b-1aaa-420f-84e9-782df70a17dd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
