@@ -7,6 +7,98 @@
 	},
 	"item": [
 		{
+			"name": "Send to Google Sheets",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4085569e-3169-406b-9d46-fa179af51ba7",
+						"exec": [
+							"const spreadsheetId = pm.environment.get(\"GoogleSheetID\");",
+							"const sheetName = pm.environment.get(\"GoogleSheetTabName\");",
+							"const authToken = pm.environment.get(\"authToken\");",
+							"",
+							"// Clear all data from row 2 onwards before appending",
+							"pm.sendRequest({",
+							"    url: `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}!A2:Z10000:clear`,",
+							"    method: \"POST\",",
+							"    header: {",
+							"        \"Authorization\": `Bearer ${authToken}`,",
+							"        \"Content-Type\": \"application/json\"",
+							"    }",
+							"}, function(err, res) {",
+							"    if (!err) {",
+							"        console.log(\"✅ Sheet data cleared from row 2 onwards\");",
+							"    } else {",
+							"        console.error(\"❌ Clear failed:\", err);",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "8dbb162a-4c12-44e8-9bfd-e3889dd40bef",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": {
+						"tokenName": "Google Sheets Token",
+						"authUrl": "https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&prompt=consent",
+						"clientSecret": "{{SecretID}}",
+						"clientId": "{{ClientID}}",
+						"scope": "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/spreadsheets.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.file https://spreadsheets.google.com/feeds/ https://www.googleapis.com/auth/drive",
+						"useBrowser": true,
+						"redirect_uri": "",
+						"grant_type": "authorization_code",
+						"client_authentication": "header",
+						"code_verifier": "",
+						"addTokenTo": "queryParams",
+						"accessTokenUrl": "https://oauth2.googleapis.com/token"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"values\": [\r\n        [\"{{accountNo}}\", \"{{balance}}\", \"{{currency}}\", \"{{authToken}}\", \"{{$timestamp}}\"]\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sheets.googleapis.com/v4/spreadsheets/{{GoogleSheetID}}/values/{{GoogleSheetTabName}}!A1:append?valueInputOption=USER_ENTERED",
+					"protocol": "https",
+					"host": [
+						"sheets",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"v4",
+						"spreadsheets",
+						"{{GoogleSheetID}}",
+						"values",
+						"{{GoogleSheetTabName}}!A1:append"
+					],
+					"query": [
+						{
+							"key": "valueInputOption",
+							"value": "USER_ENTERED"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "YouTube Main",
 			"event": [
 				{
@@ -243,6 +335,41 @@
 		},
 		{
 			"name": "M13 Session",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "90dbbcf9-70a0-4bd4-b4c7-f5253d5761df",
+						"exec": [
+							"// Parse the response JSON\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"// Extract the fields you need from the response\r",
+							"const accountNo = jsonData.player?.accountNo || jsonData.accountNo;\r",
+							"const agent = jsonData.agent;\r",
+							"const token = jsonData.session?.token || jsonData.token;\r",
+							"const balance = jsonData.balance;\r",
+							"const userId = jsonData.player?.userId || jsonData.userId;\r",
+							"\r",
+							"// Save them as Environment Variables (for reuse in other requests)\r",
+							"pm.environment.set(\"accountNo\", accountNo);\r",
+							"pm.environment.set(\"agent\", agent);\r",
+							"pm.environment.set(\"authToken\", token);\r",
+							"pm.environment.set(\"playerBalance\", balance);\r",
+							"pm.environment.set(\"userId\", userId);\r",
+							"\r",
+							"// Log to console for verification\r",
+							"console.log(\"Account No:\", accountNo);\r",
+							"console.log(\"Agent:\", agent);\r",
+							"console.log(\"Token:\", token);\r",
+							"console.log(\"Balance:\", balance);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
 			"id": "59daf180-cd20-433e-bcc6-886de250e7e9",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -313,7 +440,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"test\":true,\"balance\":10000,\"currency\":\"USD\"}",
+					"raw": "{\"test\":true,\"balance\":10000,\"currency\":\"PTI\"}",
 					"options": {
 						"raw": {
 							"language": "json"
