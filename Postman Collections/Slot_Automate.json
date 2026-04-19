@@ -7,6 +7,18 @@
 	},
 	"item": [
 		{
+			"name": "Setup Headers",
+			"id": "6b6e2d4b-1aaa-420f-84e9-782df70a17dd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
 			"name": "Send to Google Sheets",
 			"event": [
 				{
@@ -95,6 +107,125 @@
 						}
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "M13 Session",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "90dbbcf9-70a0-4bd4-b4c7-f5253d5761df",
+						"exec": [
+							"// Parse the response JSON\r",
+							"const jsonData = pm.response.json();\r",
+							"\r",
+							"// Extract the fields you need from the response\r",
+							"const accountNo = jsonData.player?.accountNo || jsonData.accountNo;\r",
+							"const agent = jsonData.agent;\r",
+							"const token = jsonData.session?.token || jsonData.token;\r",
+							"const balance = jsonData.balance;\r",
+							"const userId = jsonData.player?.userId || jsonData.userId;\r",
+							"\r",
+							"// Save them as Environment Variables (for reuse in other requests)\r",
+							"pm.environment.set(\"accountNo\", accountNo);\r",
+							"pm.environment.set(\"agent\", agent);\r",
+							"pm.environment.set(\"authToken\", token);\r",
+							"pm.environment.set(\"playerBalance\", balance);\r",
+							"pm.environment.set(\"userId\", userId);\r",
+							"\r",
+							"// Log to console for verification\r",
+							"console.log(\"Account No:\", accountNo);\r",
+							"console.log(\"Agent:\", agent);\r",
+							"console.log(\"Token:\", token);\r",
+							"console.log(\"Balance:\", balance);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "59daf180-cd20-433e-bcc6-886de250e7e9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "game-identifier",
+						"value": "coin-pusher-jurassic"
+					},
+					{
+						"key": "origin",
+						"value": "https://cdn.kingdomhall729.com"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://cdn.kingdomhall729.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-client-id",
+						"value": "null"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"test\":true,\"balance\":10000,\"currency\":\"PTI\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://slot.m13.kingmidasdev.net/table/api/sessions",
+				"description": "Generated from cURL: curl 'https://slot.m13.kingmidasdev.net/table/api/sessions' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9' \\\r\n  -H 'content-type: application/json' \\\r\n  -H 'game-identifier: coin-pusher-jurassic' \\\r\n  -H 'origin: https://cdn.kingdomhall729.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://cdn.kingdomhall729.com/' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: cross-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \\\r\n  -H 'x-client-id: null' \\\r\n  --data-raw '{\"test\":true,\"balance\":10000,\"currency\":\"USD\"}'"
 			},
 			"response": []
 		},
@@ -334,125 +465,6 @@
 			"response": []
 		},
 		{
-			"name": "M13 Session",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "90dbbcf9-70a0-4bd4-b4c7-f5253d5761df",
-						"exec": [
-							"// Parse the response JSON\r",
-							"const jsonData = pm.response.json();\r",
-							"\r",
-							"// Extract the fields you need from the response\r",
-							"const accountNo = jsonData.player?.accountNo || jsonData.accountNo;\r",
-							"const agent = jsonData.agent;\r",
-							"const token = jsonData.session?.token || jsonData.token;\r",
-							"const balance = jsonData.balance;\r",
-							"const userId = jsonData.player?.userId || jsonData.userId;\r",
-							"\r",
-							"// Save them as Environment Variables (for reuse in other requests)\r",
-							"pm.environment.set(\"accountNo\", accountNo);\r",
-							"pm.environment.set(\"agent\", agent);\r",
-							"pm.environment.set(\"authToken\", token);\r",
-							"pm.environment.set(\"playerBalance\", balance);\r",
-							"pm.environment.set(\"userId\", userId);\r",
-							"\r",
-							"// Log to console for verification\r",
-							"console.log(\"Account No:\", accountNo);\r",
-							"console.log(\"Agent:\", agent);\r",
-							"console.log(\"Token:\", token);\r",
-							"console.log(\"Balance:\", balance);"
-						],
-						"type": "text/javascript",
-						"packages": {},
-						"requests": {}
-					}
-				}
-			],
-			"id": "59daf180-cd20-433e-bcc6-886de250e7e9",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "accept",
-						"value": "*/*"
-					},
-					{
-						"key": "accept-language",
-						"value": "en-US,en;q=0.9"
-					},
-					{
-						"key": "content-type",
-						"value": "application/json"
-					},
-					{
-						"key": "game-identifier",
-						"value": "coin-pusher-jurassic"
-					},
-					{
-						"key": "origin",
-						"value": "https://cdn.kingdomhall729.com"
-					},
-					{
-						"key": "priority",
-						"value": "u=1, i"
-					},
-					{
-						"key": "referer",
-						"value": "https://cdn.kingdomhall729.com/"
-					},
-					{
-						"key": "sec-ch-ua",
-						"value": "\"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\""
-					},
-					{
-						"key": "sec-ch-ua-mobile",
-						"value": "?0"
-					},
-					{
-						"key": "sec-ch-ua-platform",
-						"value": "\"Windows\""
-					},
-					{
-						"key": "sec-fetch-dest",
-						"value": "empty"
-					},
-					{
-						"key": "sec-fetch-mode",
-						"value": "cors"
-					},
-					{
-						"key": "sec-fetch-site",
-						"value": "cross-site"
-					},
-					{
-						"key": "user-agent",
-						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
-					},
-					{
-						"key": "x-client-id",
-						"value": "null"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"test\":true,\"balance\":10000,\"currency\":\"PTI\"}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "https://slot.m13.kingmidasdev.net/table/api/sessions",
-				"description": "Generated from cURL: curl 'https://slot.m13.kingmidasdev.net/table/api/sessions' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9' \\\r\n  -H 'content-type: application/json' \\\r\n  -H 'game-identifier: coin-pusher-jurassic' \\\r\n  -H 'origin: https://cdn.kingdomhall729.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://cdn.kingdomhall729.com/' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: cross-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \\\r\n  -H 'x-client-id: null' \\\r\n  --data-raw '{\"test\":true,\"balance\":10000,\"currency\":\"USD\"}'"
-			},
-			"response": []
-		},
-		{
 			"name": "M13 Lobbies",
 			"id": "8836120b-2f49-456a-a551-0dfbbed255a6",
 			"protocolProfileBehavior": {
@@ -524,18 +536,6 @@
 				],
 				"url": "https://slot.m13.kingmidasdev.net/table/api/lobbies",
 				"description": "Generated from cURL: curl 'https://slot.m13.kingmidasdev.net/table/api/lobbies' \\\r\n  -H 'accept: */*' \\\r\n  -H 'accept-language: en-US,en;q=0.9' \\\r\n  -H 'game-identifier: coin-pusher-jurassic' \\\r\n  -H 'origin: https://cdn.kingdomhall729.com' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://cdn.kingdomhall729.com/' \\\r\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"147\", \"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"147\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: cross-site' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \\\r\n  -H 'x-authentication-token: KXENBZQVrO9dZ' \\\r\n  -H 'x-client-id: null'"
-			},
-			"response": []
-		},
-		{
-			"name": "New Request",
-			"id": "6b6e2d4b-1aaa-420f-84e9-782df70a17dd",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": []
 			},
 			"response": []
 		}
